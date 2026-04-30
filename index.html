@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APEX GYM — Forge Your Legacy</title>
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpolygon points='32,2 62,18 62,46 32,62 2,46 2,18' fill='%23D4AF37'/%3E%3Ctext x='32' y='44' font-family='serif' font-size='32' font-weight='bold' text-anchor='middle' fill='%23050505'%3EA%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;900&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap"
+    rel="stylesheet">
+    <!-- <link href="https://jsdelivr.net" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://jsdelivr.net" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- PAGE LOADER -->
+  <div id="page-loader">
+    <div class="loader-logo">
+      <div class="loader-hex"><span>A</span></div>
+      <div class="loader-text">APEX</div>
+      <div class="loader-bar">
+        <div class="loader-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="custom-cursor" id="cursor"></div>
+
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/923285580982" class="whatsapp-btn" target="_blank" title="Chat on WhatsApp"
+    aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    aria-label="Back to top">↑</button>
+
+  <!-- THEME / LANGUAGE CONTROLS -->
+  <div class="control-bar">
+    <button class="ctrl-btn" id="themeToggle" onclick="toggleTheme()" title="Toggle Theme">
+      <span class="ctrl-icon" id="themeIcon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16">
+  <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+</svg></span><span id="themeLabel">Light</span>
+    </button>
+    <button class="ctrl-btn" id="langToggle" onclick="toggleLang()" title="Switch Language">
+      <span class="ctrl-icon">🌐</span><span id="langLabel">اردو</span>
+    </button>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="logo-icon"><span>A</span></div>
+        <span class="logo-text">APE<em>X</em></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about" data-en="About" data-ur="ہمارے بارے میں">About</a></li>
+        <li><a href="#membership" data-en="Plans" data-ur="پلان">Plans</a></li>
+        <li><a href="#exercises" data-en="Exercises" data-ur="ورزش">Exercises</a></li>
+        <li><a href="#classes" data-en="Classes" data-ur="کلاسز">Classes</a></li>
+        <li><a href="#trainers" data-en="Trainers" data-ur="ٹرینرز">Trainers</a></li>
+        <li><a href="#gallery" data-en="Gallery" data-ur="گیلری">Gallery</a></li>
+        <li><a href="#contact" data-en="Contact" data-ur="رابطہ">Contact</a></li>
+      </ul>
+      <div class="nav-cta" id="navCta">
+        <button class="btn btn-outline" onclick="openAuth('login')" style="padding:10px 20px;font-size:12px;"
+          data-en="Sign In" data-ur="لاگ ان">Sign In</button>
+        <button class="btn btn-gold" onclick="openAuth('register')" style="padding:10px 20px;font-size:12px;"
+          data-en="Join Now" data-ur="ابھی شامل ہوں">Join Now</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu" aria-label="Close menu">×</button>
+    <a href="#about" onclick="closeMobileMenu()" data-en="About" data-ur="ہمارے بارے میں">About</a>
+    <a href="#membership" onclick="closeMobileMenu()" data-en="Plans" data-ur="پلان">Plans</a>
+    <a href="#exercises" onclick="closeMobileMenu()" data-en="Exercises" data-ur="ورزش">Exercises</a>
+    <a href="#classes" onclick="closeMobileMenu()" data-en="Classes" data-ur="کلاسز">Classes</a>
+    <a href="#trainers" onclick="closeMobileMenu()" data-en="Trainers" data-ur="ٹرینرز">Trainers</a>
+    <a href="#gallery" onclick="closeMobileMenu()" data-en="Gallery" data-ur="گیلری">Gallery</a>
+    <a href="#contact" onclick="closeMobileMenu()" data-en="Contact" data-ur="رابطہ">Contact</a>
+    <div style="display:flex;gap:16px;margin-top:8px;flex-wrap:wrap;justify-content:center;">
+      <button class="btn btn-outline" onclick="openAuth('login');closeMobileMenu()">Sign In</button>
+      <button class="btn btn-gold" onclick="openAuth('register');closeMobileMenu()">Join Now</button>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <div class="hero-eyebrow">
+        <div class="hero-line"></div>
+        <span data-en="Est. 2015 — Premium Fitness Club, Gujrat Pakistan"
+          data-ur="2015 سے قائم — گجرات پاکستان کا بہترین جم">Est. 2015 — Premium Fitness Club, Gujrat Pakistan</span>
+        <div class="hero-line"></div>
+      </div>
+      <h1 class="hero-h1">
+        <span class="outline-text">BUILD</span><br>
+        <span class="gold-text">YOUR</span>
+        LEGACY
+      </h1>
+      <p class="hero-desc"
+        data-en="Transform your body, elevate your mind, and redefine what's possible. Elite coaching, world-class equipment, unstoppable community."
+        data-ur="اپنے جسم کو بدلیں، اپنے ذہن کو بلند کریں، اور ممکن کو نئے سرے سے متعارف کرائیں۔">Transform your body,
+        elevate your mind, and redefine what's possible. Elite coaching, world-class equipment, unstoppable community.
+      </p>
+      <div class="hero-actions">
+        <button class="btn btn-gold" onclick="openAuth('register')" data-en="Join Now — Free Trial"
+          data-ur="ابھی شامل ہوں — مفت ٹرائل">Join Now — Free Trial</button>
+        <a href="#classes" class="btn btn-outline" data-en="Explore Classes ↓" data-ur="کلاسز دیکھیں ↓">Explore Classes
+          ↓</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">5K+</div>
+        <div class="stat-label" data-en="Active Members" data-ur="فعال ممبران">Active Members</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">40+</div>
+        <div class="stat-label" data-en="Expert Trainers" data-ur="ماہر ٹرینرز">Expert Trainers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">98%</div>
+        <div class="stat-label" data-en="Satisfaction Rate" data-ur="اطمینان کی شرح">Satisfaction Rate</div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Strength Training</span><span class="ticker-sep">✦</span>
+      <span>HIIT Cardio</span><span class="ticker-sep">✦</span>
+      <span>CrossFit</span><span class="ticker-sep">✦</span>
+      <span>Yoga & Flexibility</span><span class="ticker-sep">✦</span>
+      <span>Personal Training</span><span class="ticker-sep">✦</span>
+      <span>Nutrition Coaching</span><span class="ticker-sep">✦</span>
+      <span>Boxing & MMA</span><span class="ticker-sep">✦</span>
+      <span>Spin Classes</span><span class="ticker-sep">✦</span>
+      <span>Powerlifting</span><span class="ticker-sep">✦</span>
+      <span>Pilates</span><span class="ticker-sep">✦</span>
+      <span>Calisthenics</span><span class="ticker-sep">✦</span>
+      <span>Zumba</span><span class="ticker-sep">✦</span>
+      <span>Strength Training</span><span class="ticker-sep">✦</span>
+      <span>HIIT Cardio</span><span class="ticker-sep">✦</span>
+      <span>CrossFit</span><span class="ticker-sep">✦</span>
+      <span>Yoga & Flexibility</span><span class="ticker-sep">✦</span>
+      <span>Personal Training</span><span class="ticker-sep">✦</span>
+      <span>Nutrition Coaching</span><span class="ticker-sep">✦</span>
+      <span>Boxing & MMA</span><span class="ticker-sep">✦</span>
+      <span>Spin Classes</span><span class="ticker-sep">✦</span>
+      <span>Powerlifting</span><span class="ticker-sep">✦</span>
+      <span>Pilates</span><span class="ticker-sep">✦</span>
+      <span>Calisthenics</span><span class="ticker-sep">✦</span>
+      <span>Zumba</span><span class="ticker-sep">✦</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-stack reveal">
+          <img class="about-img-main" src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80"
+            alt="Gym Interior" loading="lazy">
+          <img class="about-img-accent" src="https://images.unsplash.com/photo-1577221084712-45b0445d2b00?w=600&q=80"
+            alt="Training" loading="lazy">
+          <div class="about-badge">
+            <strong>10</strong>
+            <span>Years of Excellence</span>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay:0.2s">
+          <span class="tag" data-en="About Apex Gym" data-ur="اپیکس جم کے بارے میں">About Apex Gym</span>
+          <h2 class="section-title">MORE THAN<br>A <span class="gold">GYM</span></h2>
+          <div class="divider"></div>
+          <p class="section-sub"
+            data-en="APEX isn't just a place to work out — it's where limits are shattered. We combine cutting-edge equipment, elite coaching, and a culture of relentless progress to help every member unlock their peak performance."
+            data-ur="اپیکس صرف ورزش کی جگہ نہیں — یہ وہ جگہ ہے جہاں حدود ٹوٹتی ہیں۔">APEX isn't just a place to work out
+            — it's where limits are shattered. We combine cutting-edge equipment, elite coaching, and a culture of
+            relentless progress to help every member unlock their peak performance.</p>
+          <p style="font-size:15px;color:var(--grey);line-height:1.8;margin-top:16px;">Located at <strong
+              style="color:var(--gold);">Sabour, Near Kotla Arab Ali Khan, Gujrat, Pakistan</strong> — founded in 2015,
+            we've helped over 5,000 members achieve extraordinary transformations. Our state-of-the-art facility spans
+            25,000 sq ft with 200+ equipment pieces, dedicated zones for every discipline, recovery suites, and premium
+            amenities.</p>
+          <div class="about-values">
+            <div class="value-card">
+              <img class="value-img" src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=200&q=80"
+                alt="Excellence">
+              <h4 data-en="Excellence" data-ur="فضیلت">Excellence</h4>
+              <p data-en="World-class equipment and certified trainers at every step."
+                data-ur="ہر قدم پر عالمی معیار کے آلات اور سند یافتہ ٹرینرز۔">World-class equipment and certified
+                trainers at every step.</p>
+            </div>
+            <div class="value-card">
+              <img class="value-img" src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=200&q=80"
+                alt="Intensity">
+              <h4 data-en="Intensity" data-ur="شدت">Intensity</h4>
+              <p data-en="Every session is engineered for maximum results."
+                data-ur="ہر سیشن زیادہ سے زیادہ نتائج کے لیے ڈیزائن کیا گیا ہے۔">Every session is engineered for maximum
+                results.</p>
+            </div>
+            <div class="value-card">
+              <img class="value-img" src="https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?w=200&q=80"
+                alt="Community">
+              <h4 data-en="Community" data-ur="برادری">Community</h4>
+              <p data-en="A brotherhood and sisterhood built on mutual growth."
+                data-ur="باہمی ترقی پر قائم ایک بھائی چارہ اور بہن چارہ۔">A brotherhood and sisterhood built on mutual
+                growth.</p>
+            </div>
+            <div class="value-card">
+              <img class="value-img" src="https://images.unsplash.com/photo-1576678927484-cc907957088c?w=200&q=80"
+                alt="Science">
+              <h4 data-en="Science" data-ur="سائنس">Science</h4>
+              <p data-en="Evidence-based training and nutrition protocols."
+                data-ur="شواہد پر مبنی تربیت اور غذائیت کے پروٹوکول۔">Evidence-based training and nutrition protocols.
+              </p>
+            </div>
+          </div>
+          <div style="margin-top:32px;">
+            <a href="#membership" class="btn btn-gold" data-en="Start Your Journey" data-ur="اپنا سفر شروع کریں">Start
+              Your Journey</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stats-item reveal">
+          <div class="stats-num counter" data-target="5000">0</div>
+          <div class="stats-label" data-en="Active Members" data-ur="فعال ممبران">Active Members</div>
+        </div>
+        <div class="stats-item reveal" style="transition-delay:0.1s">
+          <div class="stats-num counter" data-target="42">0</div>
+          <div class="stats-label" data-en="Expert Trainers" data-ur="ماہر ٹرینرز">Expert Trainers</div>
+        </div>
+        <div class="stats-item reveal" style="transition-delay:0.2s">
+          <div class="stats-num counter" data-target="200">0</div>
+          <div class="stats-label" data-en="Equipment Pieces" data-ur="آلات کی تعداد">Equipment Pieces</div>
+        </div>
+        <div class="stats-item reveal" style="transition-delay:0.3s">
+          <div class="stats-num">25K</div>
+          <div class="stats-label" data-en="Sq Ft Facility" data-ur="مربع فٹ سہولت">Sq Ft Facility</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MEMBERSHIP -->
+  <section id="membership">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <span class="tag" data-en="Membership Plans" data-ur="رکنیت کے پلان">Membership Plans</span>
+        <h2 class="section-title">CHOOSE YOUR<br><span class="gold">BATTLE PLAN</span></h2>
+        <p class="section-sub" style="margin:16px auto 0;text-align:center;"
+          data-en="No hidden fees. Cancel anytime. Every plan includes full facility access and group classes."
+          data-ur="کوئی پوشیدہ فیس نہیں۔ کبھی بھی منسوخ کریں۔">No hidden fees. Cancel anytime. Every plan includes full
+          facility access and group classes.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card reveal">
+          <div class="price-tier">Starter</div>
+          <div class="price-amount">
+            <span class="price-currency">PKR</span>
+            <span class="price-num">2,999</span>
+            <span class="price-period">/mo</span>
+          </div>
+          <p class="price-desc">Perfect for beginners starting their fitness journey with essential access.</p>
+          <ul class="price-features">
+            <li><span class="feat-check">✓</span>Full Gym Floor Access</li>
+            <li><span class="feat-check">✓</span>5 Group Classes/Week</li>
+            <li><span class="feat-check">✓</span>Locker Room & Showers</li>
+            <li><span class="feat-check">✓</span>Fitness Assessment</li>
+            <li><span class="feat-check no">–</span>Personal Training</li>
+            <li><span class="feat-check no">–</span>Nutrition Coaching</li>
+            <li><span class="feat-check no">–</span>Recovery Suite Access</li>
+            <li><span class="feat-check no">–</span>Guest Passes</li>
+          </ul>
+          <button class="btn btn-outline" style="width:100%;justify-content:center;"
+            onclick="openPayment('Starter','2,999')">Get Started</button>
+        </div>
+        <div class="price-card featured reveal" style="transition-delay:0.15s">
+          <div class="price-badge">Most Popular</div>
+          <div class="price-tier">Elite</div>
+          <div class="price-amount">
+            <span class="price-currency">PKR</span>
+            <span class="price-num">5,999</span>
+            <span class="price-period">/mo</span>
+          </div>
+          <p class="price-desc">Our most popular plan — everything you need to transform your body.</p>
+          <ul class="price-features">
+            <li><span class="feat-check">✓</span>Full Gym Floor Access</li>
+            <li><span class="feat-check">✓</span>Unlimited Group Classes</li>
+            <li><span class="feat-check">✓</span>Locker Room & Showers</li>
+            <li><span class="feat-check">✓</span>Monthly Assessment</li>
+            <li><span class="feat-check">✓</span>2 PT Sessions/Month</li>
+            <li><span class="feat-check">✓</span>Basic Nutrition Coaching</li>
+            <li><span class="feat-check">✓</span>Recovery Suite Access</li>
+            <li><span class="feat-check no">–</span>Guest Passes</li>
+          </ul>
+          <button class="btn btn-gold" style="width:100%;justify-content:center;"
+            onclick="openPayment('Elite','5,999')">Join Elite</button>
+        </div>
+        <div class="price-card reveal" style="transition-delay:0.3s">
+          <div class="price-tier">Champion</div>
+          <div class="price-amount">
+            <span class="price-currency">PKR</span>
+            <span class="price-num">9,999</span>
+            <span class="price-period">/mo</span>
+          </div>
+          <p class="price-desc">The ultimate package for serious athletes who demand the best.</p>
+          <ul class="price-features">
+            <li><span class="feat-check">✓</span>Full Gym Floor Access</li>
+            <li><span class="feat-check">✓</span>Unlimited Group Classes</li>
+            <li><span class="feat-check">✓</span>Premium Locker Room</li>
+            <li><span class="feat-check">✓</span>Weekly Assessment</li>
+            <li><span class="feat-check">✓</span>8 PT Sessions/Month</li>
+            <li><span class="feat-check">✓</span>Full Nutrition Coaching</li>
+            <li><span class="feat-check">✓</span>Recovery Suite Access</li>
+            <li><span class="feat-check">✓</span>4 Guest Passes/Month</li>
+          </ul>
+          <button class="btn btn-outline" style="width:100%;justify-content:center;"
+            onclick="openPayment('Champion','9,999')">Go Champion</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXERCISES & WORKOUTS -->
+  <section id="exercises">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <span class="tag" data-en="Exercises & Workouts" data-ur="ورزش اور ٹریننگ">Exercises & Workouts</span>
+        <h2 class="section-title">TRAIN <span class="gold">SMARTER</span></h2>
+        <p class="section-sub" style="margin:16px auto 0;text-align:center;">Explore our extensive library of exercises
+          designed for every fitness level and goal.</p>
+      </div>
+      <div class="exercises-filter reveal">
+        <button class="filter-btn active" onclick="filterEx(this,'all')">All</button>
+        <button class="filter-btn" onclick="filterEx(this,'strength')">Strength</button>
+        <button class="filter-btn" onclick="filterEx(this,'cardio')">Cardio</button>
+        <button class="filter-btn" onclick="filterEx(this,'flexibility')">Flexibility</button>
+        <button class="filter-btn" onclick="filterEx(this,'combat')">Combat</button>
+        <button class="filter-btn" onclick="filterEx(this,'functional')">Functional</button>
+      </div>
+      <div class="exercises-grid" id="exercisesGrid">
+
+        <!-- STRENGTH -->
+        <div class="exercise-card reveal" data-cat="strength">
+          <div class="exercise-thumb">
+            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=600&q=80" alt="Deadlift"
+              loading="lazy">
+            <span class="ex-level advanced">Advanced</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-cat">Strength</div>
+            <div class="exercise-name">Barbell Deadlift</div>
+            <div class="exercise-meta"><span>⏱ 60 Min</span><span>🔥 800 kcal</span><span>💪 Back / Legs</span></div>
+          </div>
+        </div>
+
+        <div class="exercise-card reveal" data-cat="strength" style="transition-delay:0.05s">
+          <div class="exercise-thumb">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="Bench Press"
+              loading="lazy">
+            <span class="ex-level intermediate">Intermediate</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-cat">Strength</div>
+            <div class="exercise-name">Bench Press</div>
+            <div class="exercise-meta"><span>⏱ 45 Min</span><span>🔥 500 kcal</span><span>💪 Chest</span></div>
+          </div>
+        </div>
+
+        <div class="exercise-card reveal" data-cat="strength" style="transition-delay:0.1s">
+          <div class="exercise-thumb">
+            <img src="https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=600&q=80" alt="Back Squat"
+              loading="lazy">
+            <span class="ex-level intermediate">Intermediate</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-cat">Strength</div>
+            <div class="exercise-name">Back Squat</div>
+            <div class="exercise-meta"><span>⏱ 50 Min</span><span>🔥 650 kcal</span><span>💪 Legs</span></div>
+          </div>
+        </div>
+
+        <div class="exercise-card reveal" data-cat="strength" style="transition-delay:0.15s">
+          <div class="exercise-thumb">
+            <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&q=80" alt="Dumbbell Curls"
+              loading="lazy">
+            <span class="ex-level beginner">Beginner</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-cat">Strength</div>
+            <div class="exercise-name">Dumbbell Curls</div>
+            <div class="exercise-meta"><span>⏱ 30 Min</span><span>🔥 300 kcal</span><span>💪 Biceps</span></div>
+          </div>
+        </div>
+
+        <div class="exercise-card reveal" data-cat="strength" style="transition-delay:0.2s">
+          <div class="exercise-thumb">
+            <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=600&q=80" alt="Overhead Press"
+              loading="lazy">
+            <span class="ex-level advanced">Advanced</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-cat">Strength</div>
+            <div class="exercise-name">Overhead Press</div>
+            <div class="exercise-meta"><span>⏱ 40 Min</span><span>🔥 450 kcal</span><span>💪 Shoulders</span></div>
+          </div>
+        </div>
+
+        <!-- CARDIO -->
+        <div class="exercise-card reveal" data-cat="cardio" style="transition-delay:0.05s">
+          <div class="exercise-thumb">
+            <img src="https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?w=600&q=80" alt="HIIT"
+              loading="lazy">
+            <span class="ex-level intermediate">Intermediate</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-cat">Cardio</div>
+            <div class="exercise-name">HIIT Circuit</div>
+            <div class="exercise-meta"><span>⏱ 45 Min</span><span>🔥 700 kcal</span><span>💪 Full Body</span></div>
+          </div>
+        </div>
+
+        <div class="exercise-card reveal" data-cat="cardio" style="transition-delay:0.1s">
+          <div class="exercise-thumb">
+            <img src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=600&q=80" alt="Spin Cycling"
+              loading="lazy">
+            <span class="ex-level beginner">Beginner</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-cat">Cardio</div>
+            <div class="exercise-name">Spin Cycling</div>
+            <div class="exercise-meta"><span>⏱ 45 Min</span><span>🔥 600 kcal</span><span>💪 Legs / Core</span></div>
+          </div>
+        </div>
+
+        <div class="exercise-card reveal" data-cat="cardio" style="transition-delay:0.15s">
+          <div class="exercise-thumb">
+            <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=600&q=80" alt="Treadmill Run"
+              loading="lazy">
+            <span class="ex-level beginner">Beginner</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-cat">Cardio</div>
+            <div class="exercise-name">Treadmill Run</div>
+            <div class="exercise-meta"><span>⏱ 30 Min</span><span>🔥 400 kcal</span><span>💪 Full Body</span></div>
+          </div>
+        </div>
+
+        <div class="exercise-card reveal" data-cat="cardio" style="transition-delay:0.2s">
+          <div class="exercise-thumb">
+            <img src="https://images.unsplash.com/photo-1550977616-efc580084ac5?w=600&q=80" alt="Battle Ropes"
+              loading="lazy">
+            <span class="ex-level advanced">Advanced</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-cat">Cardio</div>
+            <div class="exercise-name">Battle Ropes</div>
+            <div class="exercise-meta"><span>⏱ 20 Min</span><span>🔥 500 kcal</span><span>💪 Arms / Core</span></div>
+          </div>
+        </div>
+
+        <!-- FLEXIBILITY -->
+        <div class="exercise-card reveal" data-cat="flexibility" style="transition-delay:0.05s">
+          <div class="exercise-thumb">
+            <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=600&q=80" alt="Yoga"
+              loading="lazy">
+            <span class="ex-level beginner">Beginner</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-cat">Flexibility</div>
+            <div class="exercise-name">Power Yoga</div>
+            <div class="exercise-meta"><span>⏱ 75 Min</span><span>🔥 350 kcal</span><span>💪 Full Body</span></div>
+          </div>
+        </div>
+
+        <div class="exercise-card reveal" data-cat="flexibility" style="transition-delay:0.1s">
+          <div class="exercise-thumb">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80" alt="Pilates Core"
+              loading="lazy">
+            <span class="ex-level beginner">Beginner</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-cat">Flexibility</div>
+            <div class="exercise-name">Pilates Core</div>
+            <div class="exercise-meta"><span>⏱ 60 Min</span><span>🔥 300 kcal</span><span>💪 Core</span></div>
+          </div>
+        </div>
+
+        <div class="exercise-card reveal" data-cat="flexibility" style="transition-delay:0.15s">
+          <div class="exercise-thumb">
+            <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&q=80" alt="Mobility Flow"
+              loading="lazy">
+            <span class="ex-level intermediate">Intermediate</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-cat">Flexibility</div>
+            <div class="exercise-name">Mobility Flow</div>
+            <div class="exercise-meta"><span>⏱ 45 Min</span><span>🔥 200 kcal</span><span>💪 Joints</span></div>
+          </div>
+        </div>
+
+        <!-- COMBAT -->
+        <div class="exercise-card reveal" data-cat="combat" style="transition-delay:0.05s">
+          <div class="exercise-thumb">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80" alt="Boxing" loading="lazy">
+            <span class="ex-level intermediate">Intermediate</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-cat">Combat</div>
+            <div class="exercise-name">Boxing Fundamentals</div>
+            <div class="exercise-meta"><span>⏱ 60 Min</span><span>🔥 750 kcal</span><span>💪 Full Body</span></div>
+          </div>
+        </div>
+
+        <div class="exercise-card reveal" data-cat="combat" style="transition-delay:0.1s">
+          <div class="exercise-thumb">
+            <img src="https://images.unsplash.com/photo-1509563268479-0f004cf3f58b?w=600&q=80" alt="Kickboxing"
+              loading="lazy">
+            <span class="ex-level advanced">Advanced</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-cat">Combat</div>
+            <div class="exercise-name">Kickboxing</div>
+            <div class="exercise-meta"><span>⏱ 60 Min</span><span>🔥 850 kcal</span><span>💪 Full Body</span></div>
+          </div>
+        </div>
+
+        <div class="exercise-card reveal" data-cat="combat" style="transition-delay:0.15s">
+          <div class="exercise-thumb">
+            <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?w=600&q=80" alt="MMA Training"
+              loading="lazy">
+            <span class="ex-level advanced">Advanced</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-cat">Combat</div>
+            <div class="exercise-name">MMA Training</div>
+            <div class="exercise-meta"><span>⏱ 90 Min</span><span>🔥 950 kcal</span><span>💪 Full Body</span></div>
+          </div>
+        </div>
+
+        <!-- FUNCTIONAL -->
+        <div class="exercise-card reveal" data-cat="functional" style="transition-delay:0.05s">
+          <div class="exercise-thumb">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="CrossFit"
+              loading="lazy">
+            <span class="ex-level advanced">Advanced</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-cat">Functional</div>
+            <div class="exercise-name">CrossFit WOD</div>
+            <div class="exercise-meta"><span>⏱ 60 Min</span><span>🔥 800 kcal</span><span>💪 Full Body</span></div>
+          </div>
+        </div>
+
+        <div class="exercise-card reveal" data-cat="functional" style="transition-delay:0.1s">
+          <div class="exercise-thumb">
+            <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=600&q=80" alt="Calisthenics"
+              loading="lazy">
+            <span class="ex-level beginner">Beginner</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-cat">Functional</div>
+            <div class="exercise-name">Calisthenics</div>
+            <div class="exercise-meta"><span>⏱ 45 Min</span><span>🔥 500 kcal</span><span>💪 Full Body</span></div>
+          </div>
+        </div>
+
+        <div class="exercise-card reveal" data-cat="functional" style="transition-delay:0.15s">
+          <div class="exercise-thumb">
+            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&q=80" alt="TRX Suspension"
+              loading="lazy">
+            <span class="ex-level intermediate">Intermediate</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-cat">Functional</div>
+            <div class="exercise-name">TRX Suspension</div>
+            <div class="exercise-meta"><span>⏱ 40 Min</span><span>🔥 550 kcal</span><span>💪 Core / Stability</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CLASSES -->
+  <section id="classes">
+    <div class="container">
+      <div class="classes-header reveal">
+        <div>
+          <span class="tag" data-en="Classes & Programs" data-ur="کلاسز اور پروگرام">Classes & Programs</span>
+          <h2 class="section-title">EVERY<br><span class="gold">DISCIPLINE</span></h2>
+        </div>
+        <a href="#contact" class="btn btn-gold" data-en="Book a Class" data-ur="کلاس بک کریں">Book a Class</a>
+      </div>
+      <div class="classes-grid reveal">
+        <div class="class-card">
+          <img class="class-bg" src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=800&q=80"
+            alt="Strength Training" loading="lazy">
+          <div class="class-overlay"></div>
+          <div class="class-content">
+            <div class="class-cat">Strength</div>
+            <div class="class-name">Powerlifting</div>
+            <div class="class-meta"><span>60 Min</span><span>All Levels</span></div>
+          </div>
+        </div>
+        <div class="class-card">
+          <img class="class-bg" src="https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?w=800&q=80" alt="HIIT"
+            loading="lazy">
+          <div class="class-overlay"></div>
+          <div class="class-content">
+            <div class="class-cat">Cardio</div>
+            <div class="class-name">HIIT Burn</div>
+            <div class="class-meta"><span>45 Min</span><span>Intermediate</span></div>
+          </div>
+        </div>
+        <div class="class-card">
+          <img class="class-bg" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80"
+            alt="CrossFit" loading="lazy">
+          <div class="class-overlay"></div>
+          <div class="class-content">
+            <div class="class-cat">Cross Training</div>
+            <div class="class-name">CrossFit WOD</div>
+            <div class="class-meta"><span>60 Min</span><span>Advanced</span></div>
+          </div>
+        </div>
+        <div class="class-card">
+          <img class="class-bg" src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=800&q=80" alt="Yoga"
+            loading="lazy">
+          <div class="class-overlay"></div>
+          <div class="class-content">
+            <div class="class-cat">Mind & Body</div>
+            <div class="class-name">Power Yoga</div>
+            <div class="class-meta"><span>75 Min</span><span>All Levels</span></div>
+          </div>
+        </div>
+        <div class="class-card">
+          <img class="class-bg" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80" alt="Boxing"
+            loading="lazy">
+          <div class="class-overlay"></div>
+          <div class="class-content">
+            <div class="class-cat">Combat</div>
+            <div class="class-name">Boxing & MMA</div>
+            <div class="class-meta"><span>60 Min</span><span>Beginner–Advanced</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Schedule -->
+      <div class="schedule-wrap reveal">
+        <h3 style="font-family:var(--font-display);font-size:36px;text-transform:uppercase;margin-bottom:24px;">Class
+          <span class="gold">Schedule</span></h3>
+        <div class="schedule-tabs">
+          <button class="tab-btn active" onclick="showDay(this,'mon')">Mon</button>
+          <button class="tab-btn" onclick="showDay(this,'tue')">Tue</button>
+          <button class="tab-btn" onclick="showDay(this,'wed')">Wed</button>
+          <button class="tab-btn" onclick="showDay(this,'thu')">Thu</button>
+          <button class="tab-btn" onclick="showDay(this,'fri')">Fri</button>
+          <button class="tab-btn" onclick="showDay(this,'sat')">Sat</button>
+          <button class="tab-btn" onclick="showDay(this,'sun')">Sun</button>
+        </div>
+        <div id="scheduleTable">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Class</th>
+                <th>Trainer</th>
+                <th>Duration</th>
+                <th>Level</th>
+                <th>Spots</th>
+              </tr>
+            </thead>
+            <tbody id="scheduleBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINERS -->
+  <section id="trainers">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <span class="tag" data-en="Our Experts" data-ur="ہمارے ماہرین">Our Experts</span>
+        <h2 class="section-title">ELITE <span class="gold">TRAINERS</span></h2>
+        <p class="section-sub" style="margin:16px auto 0;text-align:center;">Certified professionals dedicated to your
+          transformation.</p>
+      </div>
+      <div class="trainers-grid">
+        <div class="trainer-card reveal">
+          <img class="trainer-img" src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=600&q=80"
+            alt="Marcus Steel" loading="lazy">
+          <div class="trainer-info">
+            <div class="trainer-name">Marcus Steel</div>
+            <div class="trainer-role">Head Strength Coach</div>
+            <div class="trainer-spec">Powerlifting • Bodybuilding</div>
+            <div class="trainer-certs">CSCS, NSCA-CPT • 12 Years Exp.</div>
+            <div class="trainer-socials">
+              <a href="#" class="social-btn">in</a><a href="#" class="social-btn">ig</a>
+            </div>
+          </div>
+        </div>
+        <div class="trainer-card reveal" style="transition-delay:0.1s">
+          <img class="trainer-img" src="https://images.unsplash.com/photo-1536922246289-88c42f957773?w=600&q=80"
+            alt="Sofia Reyes" loading="lazy">
+          <div class="trainer-info">
+            <div class="trainer-name">Sofia Reyes</div>
+            <div class="trainer-role">Yoga & Mobility Specialist</div>
+            <div class="trainer-spec">Hatha • Vinyasa • Pilates</div>
+            <div class="trainer-certs">RYT-500, FMS Certified • 9 Years</div>
+            <div class="trainer-socials">
+              <a href="#" class="social-btn">in</a><a href="#" class="social-btn">ig</a>
+            </div>
+          </div>
+        </div>
+        <div class="trainer-card reveal" style="transition-delay:0.2s">
+          <img class="trainer-img" src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=600&q=80"
+            alt="Jake Rivers" loading="lazy">
+          <div class="trainer-info">
+            <div class="trainer-name">Jake Rivers</div>
+            <div class="trainer-role">CrossFit & HIIT Coach</div>
+            <div class="trainer-spec">CrossFit • Functional Training</div>
+            <div class="trainer-certs">CF-L3, NASM-CPT • 8 Years</div>
+            <div class="trainer-socials">
+              <a href="#" class="social-btn">in</a><a href="#" class="social-btn">ig</a>
+            </div>
+          </div>
+        </div>
+        <div class="trainer-card reveal" style="transition-delay:0.3s">
+          <img class="trainer-img" src="https://images.unsplash.com/photo-1611672585731-fa10603fb9e0?w=600&q=80"
+            alt="Aria Chen" loading="lazy">
+          <div class="trainer-info">
+            <div class="trainer-name">Aria Chen</div>
+            <div class="trainer-role">Nutrition & Wellness Coach</div>
+            <div class="trainer-spec">Sports Nutrition • Weight Management</div>
+            <div class="trainer-certs">RD, CISSN, Pn2 • 11 Years</div>
+            <div class="trainer-socials">
+              <a href="#" class="social-btn">in</a><a href="#" class="social-btn">ig</a>
+            </div>
+          </div>
+        </div>
+        <div class="trainer-card reveal" style="transition-delay:0.1s">
+          <img class="trainer-img" src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=600&q=80"
+            alt="Coach Lee" loading="lazy">
+          <div class="trainer-info">
+            <div class="trainer-name">Coach Lee</div>
+            <div class="trainer-role">Boxing & MMA Specialist</div>
+            <div class="trainer-spec">Boxing • Kickboxing • Muay Thai</div>
+            <div class="trainer-certs">WBC Coach, AIBA Level 2 • 15 Years</div>
+            <div class="trainer-socials">
+              <a href="#" class="social-btn">in</a><a href="#" class="social-btn">ig</a>
+            </div>
+          </div>
+        </div>
+        <div class="trainer-card reveal" style="transition-delay:0.2s">
+          <img class="trainer-img" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80"
+            alt="Coach Mia" loading="lazy">
+          <div class="trainer-info">
+            <div class="trainer-name">Coach Mia</div>
+            <div class="trainer-role">Dance Cardio & Spin</div>
+            <div class="trainer-spec">Zumba • Spin • Dance Fitness</div>
+            <div class="trainer-certs">ACE-CPT, Zumba Licensed • 7 Years</div>
+            <div class="trainer-socials">
+              <a href="#" class="social-btn">in</a><a href="#" class="social-btn">ig</a>
+            </div>
+          </div>
+        </div>
+        <div class="trainer-card reveal" style="transition-delay:0.3s">
+          <img class="trainer-img" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80"
+            alt="Dr. Hassan" loading="lazy">
+          <div class="trainer-info">
+            <div class="trainer-name">Dr. Hassan</div>
+            <div class="trainer-role">Sports Medicine & Recovery</div>
+            <div class="trainer-spec">Injury Prevention • Rehab</div>
+            <div class="trainer-certs">MD, CSCS, SMTA • 14 Years</div>
+            <div class="trainer-socials">
+              <a href="#" class="social-btn">in</a><a href="#" class="social-btn">ig</a>
+            </div>
+          </div>
+        </div>
+        <div class="trainer-card reveal" style="transition-delay:0.1s">
+          <img class="trainer-img" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&q=80"
+            alt="Coach Ava" loading="lazy">
+          <div class="trainer-info">
+            <div class="trainer-name">Coach Ava</div>
+            <div class="trainer-role">Barre & Core Specialist</div>
+            <div class="trainer-spec">Barre • Core Training • Stretching</div>
+            <div class="trainer-certs">BASI Pilates, PMA-CPT • 6 Years</div>
+            <div class="trainer-socials">
+              <a href="#" class="social-btn">in</a><a href="#" class="social-btn">ig</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <span class="tag">Real Results</span>
+        <h2 class="section-title">MEMBERS <span class="gold">SPEAK</span></h2>
+      </div>
+      <div class="testimonials-track">
+        <div class="testi-card reveal">
+          <div class="testi-rating"><span class="star">★</span><span class="star">★</span><span
+              class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <p class="testi-text">"I lost 35 lbs in 4 months. The trainers here don't just count reps — they become
+            genuinely invested in your transformation. Best decision I ever made."</p>
+          <div class="testi-author">
+            <img class="testi-avatar" src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&q=80"
+              alt="Ryan K." loading="lazy">
+            <div>
+              <div class="testi-name">Ryan Kowalski</div>
+              <div class="testi-since">Member since 2022 • Lost 35 lbs</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal" style="transition-delay:0.1s">
+          <div class="testi-rating"><span class="star">★</span><span class="star">★</span><span
+              class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <p class="testi-text">"From a complete beginner to running my first 5K and deadlifting 200 lbs in under a
+            year. The community at APEX is unmatched anywhere."</p>
+          <div class="testi-author">
+            <img class="testi-avatar" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80"
+              alt="Priya S." loading="lazy">
+            <div>
+              <div class="testi-name">Priya Sharma</div>
+              <div class="testi-since">Member since 2023 • First-time athlete</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal" style="transition-delay:0.2s">
+          <div class="testi-rating"><span class="star">★</span><span class="star">★</span><span
+              class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <p class="testi-text">"The Champion plan is worth every penny. The personalized nutrition coaching alone
+            changed everything. My body composition has completely transformed."</p>
+          <div class="testi-author">
+            <img class="testi-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80"
+              alt="David M." loading="lazy">
+            <div>
+              <div class="testi-name">David Moreno</div>
+              <div class="testi-since">Member since 2021 • Elite Athlete</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Transformations -->
+      <div class="transform-section reveal">
+        <h3 class="transform-title">Real <span class="gold">Transformations</span></h3>
+        <div class="transform-grid">
+          <div class="transform-item">
+            <img class="transform-img" src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&q=80"
+              alt="Before" loading="lazy">
+            <span class="transform-label before">Before</span>
+            <div class="transform-result">−35 lbs · 18 months</div>
+          </div>
+          <div class="transform-item">
+            <img class="transform-img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=80"
+              alt="After" loading="lazy">
+            <span class="transform-label after">After</span>
+            <div class="transform-result">+12 lbs muscle</div>
+          </div>
+          <div class="transform-item">
+            <img class="transform-img" src="https://images.unsplash.com/photo-1579758629938-03607ccdbaba?w=400&q=80"
+              alt="Before" loading="lazy">
+            <span class="transform-label before">Before</span>
+            <div class="transform-result">−28 lbs · 14 months</div>
+          </div>
+          <div class="transform-item">
+            <img class="transform-img" src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=400&q=80"
+              alt="After" loading="lazy">
+            <span class="transform-label after">After</span>
+            <div class="transform-result">PR: 315 lb squat</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <span class="tag" data-en="Our Facility" data-ur="ہماری سہولت">Our Facility</span>
+        <h2 class="section-title">THE <span class="gold">ARENA</span></h2>
+        <p class="section-sub" style="margin:16px auto 0;text-align:center;">25,000 sq ft of world-class training space
+          designed for champions.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item reveal"><img class="gallery-img"
+            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1000&q=80" alt="Main Floor"
+            loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-plus">+</span></div>
+        </div>
+        <div class="gallery-item reveal" style="transition-delay:0.05s"><img class="gallery-img"
+            src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&q=80" alt="Weights" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-plus">+</span></div>
+        </div>
+        <div class="gallery-item reveal" style="transition-delay:0.1s"><img class="gallery-img"
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Cardio Zone" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-plus">+</span></div>
+        </div>
+        <div class="gallery-item reveal" style="transition-delay:0.15s"><img class="gallery-img"
+            src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=600&q=80" alt="Boxing Ring"
+            loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-plus">+</span></div>
+        </div>
+        <div class="gallery-item reveal" style="transition-delay:0.2s"><img class="gallery-img"
+            src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80" alt="Studio" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-plus">+</span></div>
+        </div>
+        <div class="gallery-item reveal" style="transition-delay:0.25s"><img class="gallery-img"
+            src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=80" alt="Recovery" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-plus">+</span></div>
+        </div>
+        <div class="gallery-item reveal" style="transition-delay:0.3s"><img class="gallery-img"
+            src="https://images.unsplash.com/photo-1581009137042-c552e485697a?w=600&q=80" alt="CrossFit" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-plus">+</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <span class="tag" data-en="Get In Touch" data-ur="ہم سے رابطہ کریں">Get In Touch</span>
+        <h2 class="section-title">VISIT THE <span class="gold">ARENA</span></h2>
+        <p class="section-sub" style="margin:16px auto 0;text-align:center;">Book a free trial, tour the facility, or
+          ask us anything. We're here 7 days a week.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4 data-en="Location" data-ur="پتہ">Location</h4>
+              <p>Sabour, Near Kotla Arab Ali Khan<br>Gujrat, Punjab, Pakistan</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <h4 data-en="Phone" data-ur="فون">Phone</h4>
+              <p><a href="tel:+923285580982">+92 328 558 0982</a></p>
+              <p><a href="https://wa.me/923285580982" target="_blank">💬 WhatsApp Chat Available</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <h4 data-en="Email" data-ur="ای میل">Email</h4>
+              <p><a href="mailto:info@apexgym.pk">info@apexgym.pk</a></p>
+              <p><a href="mailto:coach@apexgym.pk">coach@apexgym.pk</a></p>
+            </div>
+          </div>
+          <div>
+            <h4
+              style="font-family:var(--font-cond);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;"
+              data-en="Working Hours" data-ur="اوقات کار">Working Hours</h4>
+            <div class="hours-grid">
+              <div class="hour-item"><span class="hour-day">Mon–Fri</span><span class="hour-time">5:00 AM – 11:00
+                  PM</span></div>
+              <div class="hour-item"><span class="hour-day">Saturday</span><span class="hour-time">6:00 AM – 10:00
+                  PM</span></div>
+              <div class="hour-item"><span class="hour-day">Sunday</span><span class="hour-time">7:00 AM – 9:00
+                  PM</span></div>
+              <div class="hour-item"><span class="hour-day">Holidays</span><span class="hour-time">8:00 AM – 6:00
+                  PM</span></div>
+            </div>
+          </div>
+          <div class="map-placeholder">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54332.85729671827!2d74.0506!3d32.5639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391ef6d08c5fa34d%3A0x30e0da4e61a45fb9!2sGujrat%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1699999999999"
+              allowfullscreen="" loading="lazy" title="APEX Gym Location"></iframe>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay:0.2s">
+          <div class="form-wrap" id="bookingForm">
+            <h3 class="form-title">Book Free <span class="gold">Trial</span></h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label data-en="First Name" data-ur="پہلا نام">First Name</label>
+                <input type="text" id="bFirstName" placeholder="Ahmed">
+              </div>
+              <div class="form-group">
+                <label data-en="Last Name" data-ur="آخری نام">Last Name</label>
+                <input type="text" id="bLastName" placeholder="Khan">
+              </div>
+            </div>
+            <div class="form-group">
+              <label data-en="Email Address" data-ur="ای میل">Email Address</label>
+              <input type="email" id="bEmail" placeholder="ahmed@example.com">
+            </div>
+            <div class="form-group">
+              <label data-en="Phone / WhatsApp" data-ur="فون / واٹس ایپ">Phone / WhatsApp</label>
+              <input type="tel" id="bPhone" placeholder="+92 300 0000000">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Preferred Service</label>
+                <select id="bService">
+                  <option value="">Select...</option>
+                  <option>Gym Tour & Trial</option>
+                  <option>Personal Training Session</option>
+                  <option>Group Class Trial</option>
+                  <option>Membership Consultation</option>
+                  <option>Nutrition Consultation</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Preferred Date</label>
+                <input type="date" id="bDate">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Goals / Message</label>
+              <textarea id="bMessage" placeholder="Tell us about your fitness goals..."></textarea>
+            </div>
+            <div id="bookingError" class="error-msg">Please fill in all required fields.</div>
+            <button class="btn btn-gold" style="width:100%;justify-content:center;" onclick="submitBooking()"
+              data-en="Book My Free Trial →" data-ur="مفت ٹرائل بک کریں →">Book My Free Trial →</button>
+          </div>
+          <div class="form-success" id="bookingSuccess">
+            <div class="tick">🏆</div>
+            <h3>You're Booked!</h3>
+            <p>We'll confirm your free trial within 24 hours. See you at the arena!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <div class="logo-icon"><span>A</span></div>
+            <span class="logo-text">APE<em>X</em></span>
+          </a>
+          <p>The premier fitness destination in Gujrat, Pakistan. Forge your legacy at APEX — Sabour, Near Kotla Arab
+            Ali Khan.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" title="Facebook">f</a>
+            <a href="#" class="footer-social" title="Instagram">ig</a>
+            <a href="#" class="footer-social" title="Twitter/X">𝕏</a>
+            <a href="https://wa.me/923285580982" class="footer-social" title="WhatsApp" target="_blank">wa</a>
+            <a href="#" class="footer-social" title="YouTube">▶</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#membership">Membership Plans</a></li>
+            <li><a href="#exercises">Exercises</a></li>
+            <li><a href="#classes">Classes</a></li>
+            <li><a href="#trainers">Trainers</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Programs</h5>
+          <ul>
+            <li><a href="#exercises">Strength Training</a></li>
+            <li><a href="#exercises">CrossFit & HIIT</a></li>
+            <li><a href="#exercises">Yoga & Pilates</a></li>
+            <li><a href="#exercises">Boxing & MMA</a></li>
+            <li><a href="#exercises">Calisthenics</a></li>
+            <li><a href="#exercises">Nutrition Coaching</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Membership Freeze</a></li>
+            <li><a href="#">Cancellation Policy</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 <a href="#">APEX GYM</a>. All rights reserved. Built with 🔥 in Pakistan</p>
+        <p>📍 Sabour, Near Kotla Arab Ali Khan, Gujrat · <a href="tel:+923285580982">+92 328 558 0982</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AUTH MODAL -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeAuth()" aria-label="Close">×</button>
+      <div class="modal-logo">
+        <div class="logo-icon"><span>A</span></div>
+        <span class="logo-text">APE<em>X</em></span>
+      </div>
+      <div class="modal-tabs">
+        <button class="modal-tab active" id="loginTab" onclick="switchTab('login')">Sign In</button>
+        <button class="modal-tab" id="registerTab" onclick="switchTab('register')">Join Now</button>
+      </div>
+      <!-- LOGIN -->
+      <div class="auth-form active" id="loginForm">
+        <h2>Welcome <span class="gold">Back</span></h2>
+        <p>Sign in to access your member dashboard.</p>
+        <div id="loginError" class="error-msg"></div>
+        <div id="loginSuccess" class="success-msg"></div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <div class="input-wrap">
+            <input type="email" id="loginEmail" placeholder="your@email.com" autocomplete="email">
+            <span class="input-icon">✉</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <div class="input-wrap">
+            <input type="password" id="loginPassword" placeholder="Your password" autocomplete="current-password">
+            <span class="input-icon" onclick="togglePwd('loginPassword',this)" style="cursor:pointer;">👁</span>
+          </div>
+        </div>
+        <a href="#" class="forgot-link" onclick="forgotPassword(event)">Forgot Password?</a>
+        <div class="form-check">
+          <input type="checkbox" id="rememberMe">
+          <label for="rememberMe">Keep me signed in</label>
+        </div>
+        <button class="btn btn-gold" style="width:100%;justify-content:center;" onclick="handleLogin()">Sign In
+          →</button>
+        <div class="auth-switch">Don't have an account? <button onclick="switchTab('register')">Create one free</button>
+        </div>
+      </div>
+      <!-- REGISTER -->
+      <div class="auth-form" id="registerForm">
+        <h2>Join <span class="gold">APEX</span></h2>
+        <p>Create your free account and start your transformation.</p>
+        <div id="regError" class="error-msg"></div>
+        <div id="regSuccess" class="success-msg"></div>
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" id="regFirst" placeholder="Ahmed"
+              autocomplete="given-name"></div>
+          <div class="form-group"><label>Last Name</label><input type="text" id="regLast" placeholder="Khan"
+              autocomplete="family-name"></div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <div class="input-wrap">
+            <input type="email" id="regEmail" placeholder="your@email.com" autocomplete="email">
+            <span class="input-icon">✉</span>
+          </div>
+        </div>
+        <div class="form-group"><label>Phone / WhatsApp</label><input type="tel" id="regPhone"
+            placeholder="+92 300 0000000" autocomplete="tel"></div>
+        <div class="form-group">
+          <label>Password</label>
+          <div class="input-wrap">
+            <input type="password" id="regPassword" placeholder="Create a strong password" autocomplete="new-password"
+              oninput="checkStrength(this.value)">
+            <span class="input-icon" onclick="togglePwd('regPassword',this)" style="cursor:pointer;">👁</span>
+          </div>
+          <div class="strength-bar">
+            <div class="strength-fill" id="strengthFill"></div>
+          </div>
+          <span id="strengthLabel" style="font-size:11px;color:var(--grey);"></span>
+        </div>
+        <div class="form-group">
+          <label>Confirm Password</label>
+          <div class="input-wrap">
+            <input type="password" id="regConfirm" placeholder="Repeat your password" autocomplete="new-password">
+            <span class="input-icon" onclick="togglePwd('regConfirm',this)" style="cursor:pointer;">👁</span>
+          </div>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="agreeTerms">
+          <label for="agreeTerms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy
+              Policy</a></label>
+        </div>
+        <button class="btn btn-gold" style="width:100%;justify-content:center;" onclick="handleRegister()">Create
+          Account →</button>
+        <div class="auth-switch">Already a member? <button onclick="switchTab('login')">Sign in here</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAYMENT MODAL -->
+  <div class="payment-overlay" id="paymentModal">
+    <div class="payment-box">
+      <button class="payment-close" onclick="closePayment()" aria-label="Close">×</button>
+      <div id="paymentFormSection">
+        <div class="payment-header">
+          <div class="payment-plan-badge" id="payPlanBadge">Elite Plan</div>
+          <h2>Complete Your <span class="gold">Membership</span></h2>
+          <p>Secure checkout — Your data is encrypted and safe</p>
+          <div class="payment-amount" id="payAmount">PKR 5,999<span style="font-size:20px;color:var(--grey)">/mo</span>
+          </div>
+        </div>
+        <div class="secure-badge">
+          <span>🔒</span><span>256-bit SSL Encrypted · Secure Payment Gateway</span>
+        </div>
+        <div class="payment-section-title">Personal Information</div>
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" id="payFirst" placeholder="Ahmed"></div>
+          <div class="form-group"><label>Last Name</label><input type="text" id="payLast" placeholder="Khan"></div>
+        </div>
+        <div class="form-group"><label>Email Address</label><input type="email" id="payEmail"
+            placeholder="your@email.com"></div>
+        <div class="form-group"><label>Phone / WhatsApp Number</label><input type="tel" id="payPhone"
+            placeholder="+92 300 0000000"></div>
+        <div class="form-group"><label>City / Address</label><input type="text" id="payCity"
+            placeholder="Gujrat, Punjab"></div>
+        <div class="payment-section-title">Payment Details</div>
+        <div class="form-group">
+          <label>Bank Name</label>
+          <select id="payBank">
+            <option value="">Select Your Bank</option>
+            <option>HBL (Habib Bank Limited)</option>
+            <option>MCB Bank</option>
+            <option>UBL (United Bank Limited)</option>
+            <option>Meezan Bank</option>
+            <option>Allied Bank</option>
+            <option>Bank Alfalah</option>
+            <option>Faysal Bank</option>
+            <option>Standard Chartered Pakistan</option>
+            <option>EasyPaisa / Telenor Bank</option>
+            <option>JazzCash / Mobilink Microfinance</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Card Number</label>
+          <div class="input-wrap">
+            <input type="text" id="payCard" placeholder="1234  5678  9012  3456" maxlength="19"
+              oninput="formatCard(this)" inputmode="numeric">
+            <span class="input-icon">💳</span>
+          </div>
+        </div>
+        <div class="card-row">
+          <div class="form-group">
+            <label>Expiry Date</label>
+            <input type="text" id="payExpiry" placeholder="MM / YY" maxlength="7" oninput="formatExpiry(this)">
+          </div>
+          <div class="form-group">
+            <label>CVV / CVC</label>
+            <div class="input-wrap">
+              <input type="text" id="payCvv" placeholder="123" maxlength="4" inputmode="numeric">
+              <span class="input-icon" title="3-4 digits on back of card">🛡</span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Cardholder Name</label>
+          <input type="text" id="payName" placeholder="Name as on card">
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="paySaveCard">
+          <label for="paySaveCard">Save card for future payments</label>
+        </div>
+        <div id="payError" class="error-msg">Please fill in all required fields correctly.</div>
+        <button class="btn btn-gold" style="width:100%;justify-content:center;margin-top:8px;font-size:15px;"
+          onclick="submitPayment()">🔒 Pay PKR <span id="payBtnAmount">5,999</span> Securely →</button>
+        <p style="font-size:11px;color:var(--grey);text-align:center;margin-top:12px;">By completing payment you agree
+          to our <a href="#" style="color:var(--gold);">Terms of Service</a>. Cancel anytime.</p>
+      </div>
+      <div class="payment-success" id="paymentSuccess">
+        <div class="pay-tick">🎉</div>
+        <h3>Payment <span class="gold">Successful!</span></h3>
+        <p>Welcome to APEX GYM! Your <strong id="successPlan"></strong> membership is now active.<br><br>
+          A confirmation will be sent to your email and WhatsApp.<br>
+          <strong style="color:var(--gold);">See you at the arena!</strong>
+        </p>
+        <button class="btn btn-gold" style="margin-top:24px;" onclick="closePayment()">Get Started →</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="apex.js"></script>
+</body>
+
+</html>
